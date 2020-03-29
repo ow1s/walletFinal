@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IndexUsuario </title>
+    <link rel="stylesheet" href="/src/styles.css">
+   </head>
+
+   <body>
+        <header id="header">
+                <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+                        <div class="navbar-brand">HNWALLET <sup>C.O</sup></div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                          aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                        </button>
+                        <div class="collapse navbar-collapse" >
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                              <a class="nav-link"  [routerLink]="['/','indexUsuario']">Inicio
+                              </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"  data-toggle="dropdown"
+                                  aria-haspopup="true" aria-expanded="false">Operaciones
+                                </a>
+                                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                                  <a class="dropdown-item" [routerLink]="['/','transferenciaUsuario']">Transferencia</a> 
+                                </div>
+                              </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle"  data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Consultas
+                              </a>
+                              <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                                <a class="dropdown-item" [routerLink]="['/','movimientosUsuario']">Mis movimientos</a> 
+                              </div>
+                            </li>
+                          </ul>
+                          <ul class="navbar-nav ml-auto nav-flex-icons">
+                              <li class="nav-item">
+                                  <a class="nav-link waves-effect waves-light">
+                                      <a id="saldo">Su saldo</a>
+                                      <input type="text" class="btn btn-warning" id="inputSaldo" [(ngModel)]="saldo" disabled="true"> 
+                                  </a>
+                                </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="../../../assets/img/userWhite.png" class="indexuser">
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                                aria-labelledby="navbarDropdownMenuLink-333">
+                                <a class="dropdown-item" [routerLink]="['/']" >Salir</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                       
+                      </nav>
+        </header>
+
+        <div class="container-fluid movimientos">
+            <h2>Mis Movimientos</h2>
+                     <table class="table table-sm table-dark">
+                          <thead class="thead-dark">
+                            <tr class="table">
+                              <th>Orden</th>
+                              <th>Fecha</th>
+                              <th>Movimiento</th>
+                              <th>Usuario</th>
+                              <th>Monto</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let i of movimientosTitular; let indice=index" >
+                              <td>
+                                {{indice+1}}
+                              </td>
+                              <td>
+                                {{i.fecha | date:'dd/MM/yyyy'}}
+                              </td>
+                              <td>
+                                {{i.tipo_de_operacion}}
+                              </td>
+                              <td>
+                                {{i.id_usuario_destino}}
+                              </td>
+                              <td>
+                                {{i.monto_operacion}}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+             </div>
+
+             <footer id="footerMovimientos">
+              <div class="container-footer-all">
+                  <div class="container-body">
+                      <div class="columna1">
+                          <h1>Acerca de Nosotros</h1>
+                          <p> Una empresa pensada en los usuarios </p>
+          
+                      </div>
+                      <div class="columna2">
+                          <h1>Redes Sociales</h1>
+                          <div class="row">
+                              <img class="follow-facebook" src="../../../assets/img/facebook.png">
+                              <label>Siguenos en Facebook</label>
+                              <label>HNWallet</label>
+                         </div>
+          
+                          <div class="row">
+                                  <img class="follow-instagram"src="../../../assets/img/instagram.png">
+                                  <label>Siguenos en Instagram</label>
+                                  <label>@hnowallet</label>
+                          </div>
+                          
+                          <div class="row">
+                                  <img class="follow-instagram"src="../../../assets/img/twitter.png">
+                                  <label>Siguenos en Twitter</label>
+                                  <label>@hnowallet</label>
+                          </div>
+                      </div>
+                      <div class="columna3">
+                          <h1>Informacion Contacto</h1>
+                          <div class="row2">
+                              <img src="../../../assets/img/empresa.png">
+                              <label>Avenida Siempre Viva
+                                  N° 129</label> 
+                          </div>
+                          <div class="row2">
+                                  <img src="../../../assets/img/movil.png">
+                                  <label>+3888519234</label>
+                          </div>
+          
+                      </div>
+                  </div>
+                  
+              </div>
+              <div class="container-footer">
+                  <div class="footer">
+                      <div class="copyright">
+                          <a>Todos los derechos reservados 2019</a>
+                      </div>
+          
+              <div class="informacion">
+                  <a>Informacion</a> | <a>Privacidad y Politica</a> | <a>Terminos y Condiciones</a>
+          </div>
+          </div>
+          </div> 
+  </footer>
+</body>
+</html>

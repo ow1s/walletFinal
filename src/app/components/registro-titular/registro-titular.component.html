@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+    
+      <title>Registro Usuario</title>
+      <link rel="stylesheet" href="/src/styles.css">
+     
+  </head>
+<body>
+    <header id="header">
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+                <div class="navbar-brand">HNWALLET <sup>C.O</sup></div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                  aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                </button>
+                <div class="collapse navbar-collapse" >
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" [routerLink]="['/']">Inicio
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="navbar-nav ml-auto nav-flex-icons">
+                        <li class="nav-item">
+                                <a class="nav-link waves-effect waves-light">
+                                    <a [routerLink]="['/','registroTitular']" class="btn btn-outline-primary" role="button" aria-pressed="true" id="btnRegistrarse">Registrarse</a>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link waves-effect waves-light">
+                                      <a [routerLink]="['/','login']" class="btn btn-outline-primary" role="button" aria-pressed="true" id="btIniciarsesion">Iniciar sesion</a>
+                                  </a>
+                                </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <img src="../../../assets/img/userWhite.png" class="indexuser">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+</header> 
+<div class="container contact-form">
+                <div class="contact-image">
+                    <img src="../../../assets/img/user2.png">
+                </div>
+                <form method="post">
+                    <h3>Registro</h3>
+                   <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text"  [(ngModel)]="nombre"  name="txtNombre" class="form-control" placeholder="Nombre"  required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="apellido" name="txtApellido" class="form-control" placeholder="Apellido" required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" [(ngModel)]="dni" name="txtDni" class="form-control" placeholder="Dni"  required />
+                          </div>
+                            <div class="form-group">
+                                <input type="text"  [(ngModel)]="email" name="txtEmail" class="form-control" placeholder="Email"  required/>
+                            </div>
+                            <div class="form-group">
+                                    <input type="date" [(ngModel)]="fecha_nacimiento" name="txtFechaNacimiento" class="form-control" placeholder="Fecha de nacimiento"  required />
+                                </div>
+                          <div class="form-group">
+                              <select (change)="onChange($event)">
+                                  <option *ngFor="let provincia of provincias" [value]="provincia.nombre"> {{provincia.nombre}} </option>
+                              </select>
+                          </div>
+
+                            <div class="form-group">
+                                <input type="text" name="txtUsuario" [(ngModel)]="usuario" class="form-control" placeholder="Usuario" value="" required/>
+                            </div>
+                            <div class="form-group">
+                                    <input type="password" name="txtContraseña"  [(ngModel)]="clave" class="form-control" placeholder="Contraseña" value="" required/>
+                                </div>
+                            <div class="form-group">
+                                <input type="submit" name="btnSubmit" class="btnContact" (click)="guardar()" value="Registrarse" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea name="txtMsg" class="form-control" placeholder="Algo que nos quieras decir?" style="width: 100%; height: 430px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    </div>
+
+    <footer>
+        <div class="container-footer-all">
+
+            <div class="container-body">
+                <div class="columna1">
+                    <h1>Acerca de Nosotros</h1>
+                    <p> Una empresa pensada en los usuarios </p>
+
+                </div>
+                <div class="columna2">
+                    <h1>Redes Sociales</h1>
+                    <div class="row">
+                        <img class="follow-facebook" src="../../../assets/img/facebook.png">
+                        <label>Siguenos en Facebook</label>
+                        <label>HNWallet</label>
+                   </div>
+
+                    <div class="row">
+                            <img class="follow-instagram"src="../../../assets/img/instagram.png">
+                            <label>Siguenos en Instagram</label>
+                            <label>@hnowallet</label>
+                    </div>
+                    
+                    <div class="row">
+                            <img class="follow-instagram"src="../../../assets/img/twitter.png">
+                            <label>Siguenos en Twitter</label>
+                            <label>@hnowallet</label>
+                    </div>
+                </div>
+                <div class="columna3">
+                    <h1>Informacion Contacto</h1>
+                    <div class="row2">
+                        <img src="../../../assets/img/empresa.png">
+                        <label>Avenida Siempre Viva
+                            N° 129</label> 
+                    </div>
+                    <div class="row2">
+                            <img src="../../../assets/img/movil.png">
+                            <label>+3888519234</label>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <div class="container-footer">
+            <div class="footer">
+                <div class="copyright">
+                    <a>Todos los derechos reservados 2019</a>
+                </div>
+
+        <div class="informacion">
+            <a>Informacion</a> | <a>Privacidad y Politica</a> | <a>Terminos y Condiciones</a>
+    </div>
+</div>
+        
+</div> 
+
+</footer>
+
+
+</body>
+</html>
